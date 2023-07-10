@@ -1,0 +1,40 @@
+[tool.isort]
+profile = "black"
+py_version=310
+
+[tool.ruff]
+select = [
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    # "I",  # isort
+    "C",  # flake8-comprehensions
+    "B",  # flake8-bugbear
+]
+ignore = [
+    "E501",  # line too long, handled by black
+    "B008",  # do not perform function calls in argument defaults
+    "C901",  # too complex
+]
+[tool.poetry]
+name = "test-scrapper"
+version = "0.1.0"
+description = ""
+authors = ["Neverfan1 <82371930+Neverfan1@users.noreply.github.com>"]
+readme = "README.md"
+packages = [{include = "test_scrapper"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "0.94.1"
+uvicorn = "0.20.0"
+pydantic = "1.10.4"
+sqlalchemy = "2.0.3"
+python-dotenv = "1.0.0"
+jinja2 = "3.1.2"
+requests = "^2.31.0"
+psycopg2 = "^2.9.6"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
